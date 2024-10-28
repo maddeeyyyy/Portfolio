@@ -1,8 +1,14 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+// Importing icons from @iconscout/react-unicons
+import { UilArrow, UilServerNetwork, UilIllustration, UilIcons, UilAngleDown } from '@iconscout/react-unicons';
 
 const Skills = () => {
+    const [openSection, setOpenSection] = useState(null); // State to track the open section
 
+    // Function to handle section toggle
+    const toggleSection = (section) => {
+        setOpenSection(openSection === section ? null : section); // Close if clicked again
+    };
 
     return (
         <section className="skills section" id="skills">
@@ -11,13 +17,13 @@ const Skills = () => {
             <div className="skills_container container grid">
                 <div>
                     {/* Frontend Development */}
-                    <div className="skills_content skills_open">
-                        <div className="skills_header">
-                            <i className="uil uil-arrow skills_icon"></i>
+                    <div className={`skills_content ${openSection === 'frontend' ? 'skills_open' : 'skills_close'}`}>
+                        <div className="skills_header" onClick={() => toggleSection('frontend')}>
+                            <UilArrow className="skills_icon" /> {/* Unicons Arrow Icon */}
                             <div>
                                 <h1 className="skills_title">Frontend Development</h1>
                             </div>
-                            <i className="uil uil-angle-down skills_arrow"></i>
+                            <UilAngleDown className="skills_arrow" /> {/* Unicons Angle Down Icon */}
                         </div>
                         <div className="skills_list grid">
                             {[
@@ -32,13 +38,13 @@ const Skills = () => {
                     </div>
 
                     {/* Backend Development */}
-                    <div className="skills_content skills_close">
-                        <div className="skills_header">
-                            <i className="uil uil-server-network skills_icon"></i>
+                    <div className={`skills_content ${openSection === 'backend' ? 'skills_open' : 'skills_close'}`}>
+                        <div className="skills_header" onClick={() => toggleSection('backend')}>
+                            <UilServerNetwork className="skills_icon" /> {/* Unicons Server Network Icon */}
                             <div>
                                 <h1 className="skills_title">Backend Development</h1>
                             </div>
-                            <i className="uil uil-angle-down skills_arrow"></i>
+                            <UilAngleDown className="skills_arrow" /> {/* Unicons Angle Down Icon */}
                         </div>
                         <div className="skills_list grid">
                             {[
@@ -55,13 +61,13 @@ const Skills = () => {
 
                 <div>
                     {/* Other Tech Skills */}
-                    <div className="skills_content skills_close">
-                        <div className="skills_header">
-                            <i className="uil uil-illustration skills_icon"></i>
+                    <div className={`skills_content ${openSection === 'tech' ? 'skills_open' : 'skills_close'}`}>
+                        <div className="skills_header" onClick={() => toggleSection('tech')}>
+                            <UilIllustration className="skills_icon" /> {/* Unicons Illustration Icon */}
                             <div>
                                 <h1 className="skills_title">Other Tech Skills</h1>
                             </div>
-                            <i className="uil uil-angle-down skills_arrow"></i>
+                            <UilAngleDown className="skills_arrow" /> {/* Unicons Angle Down Icon */}
                         </div>
                         <div className="skills_list grid">
                             {[
@@ -75,13 +81,13 @@ const Skills = () => {
                     </div>
 
                     {/* Soft Skills */}
-                    <div className="skills_content skills_close">
-                        <div className="skills_header">
-                            <i className="uil uil-icons skills_icon"></i>
+                    <div className={`skills_content ${openSection === 'soft' ? 'skills_open' : 'skills_close'}`}>
+                        <div className="skills_header" onClick={() => toggleSection('soft')}>
+                            <UilIcons className="skills_icon" /> {/* Unicons Icons Icon */}
                             <div>
                                 <h1 className="skills_title">Soft Skills</h1>
                             </div>
-                            <i className="uil uil-angle-down skills_arrow"></i>
+                            <UilAngleDown className="skills_arrow" /> {/* Unicons Angle Down Icon */}
                         </div>
                         <div className="skills_list grid">
                             {[

@@ -20,15 +20,15 @@ const About = () => {
                     </div>
                     <div className="about_info">
                         <div>
-                            <span className="about_info-title">2+</span>
-                            <span className="about_info-name">Years of Experience</span>
+                            <span className="about_info-title">1</span>
+                            <span className="about_info-name">Year of Experience</span>
                         </div>
                         <div>
-                            <span className="about_info-title">500+</span>
+                            <span className="about_info-title">50+</span>
                             <span className="about_info-name">Mini Assignments</span>
                         </div>
                         <div>
-                            <span className="about_info-title">20+</span>
+                            <span className="about_info-title">5+</span>
                             <span className="about_info-name">Completed Projects</span>
                         </div>
                     </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import Slider from 'react-slick'; // Import Slider from react-slick
+import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css'; // Import slick styles
 import 'slick-carousel/slick/slick-theme.css'; // Import slick theme styles
 

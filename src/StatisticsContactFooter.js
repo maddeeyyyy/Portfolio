@@ -10,19 +10,19 @@ const StatisticsContactFooter = () => {
                 <span className="section_subtitle">My Github Statistics</span>
                 <div className="statistics_container container grid">
                     <img
-                        src="https://github-readme-stats.vercel.app/api?hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=default&locale=en&hide_border=false&username=ShubhangiSisodia"
+                        src="https://github-readme-stats.vercel.app/api?hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=default&locale=en&hide_border=false&username=maddeeyyyy"
                         height="150"
                         alt="stats graph"
                         id="github-stats-card"
                     />
                     <img
-                        src="https://github-readme-stats.vercel.app/api/top-langs?locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=default&hide_border=false&username=ShubhangiSisodia"
+                        src="https://github-readme-stats.vercel.app/api/top-langs?locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=default&hide_border=false&username=maddeeyyyy"
                         height="150"
                         alt="languages graph"
                         id="github-top-langs"
                     />
                     <img
-                        src="https://github-readme-streak-stats.herokuapp.com/?user=shubhangisisodia&"
+                        src="https://github-readme-streak-stats.herokuapp.com/?user=maddeeyyyy&"
                         alt="shubhangisisodia"
                         id="github-streak-stats"
                     />
@@ -44,7 +44,7 @@ const StatisticsContactFooter = () => {
                             <i className="uil uil-envelope-alt contact_icon"></i>
                             <div>
                                 <h3 className="contact_title">Email</h3>
-                                <span className="contact_subtitle" id="contact-email">sisodiasubhangi@gmail.com</span>
+                                <span className="contact_subtitle" id="contact-email">madhursirohi2@gmail.com</span>
                             </div>
                         </div>
 
@@ -52,7 +52,7 @@ const StatisticsContactFooter = () => {
                             <i className="uil uil-map-marker contact_icon"></i>
                             <div>
                                 <h3 className="contact_title">Location</h3>
-                                <span className="contact_subtitle">Gurgaon , Haryana</span>
+                                <span className="contact_subtitle">Noida , Uttar Pradesh</span>
                             </div>
                         </div>
                     </div>
@@ -91,8 +91,8 @@ const StatisticsContactFooter = () => {
                 <div className="footer_bg">
                     <div className="footer_container container grid">
                         <div>
-                            <h1 className="footer_title">Shubhangi Sisodia</h1>
-                            <span className="footer_subtitle">Front-end Developer</span>
+                            <h1 className="footer_title">Madhur Singh Sirohi </h1>
+                            <span className="footer_subtitle">FullStack Developer</span>
                         </div>
                         <div className="footer_socials">
                             <a href="https://www.linkedin.com/in/shubhangi-sisodia/" target="_blank" rel="noopener noreferrer" className="footer_social">
@@ -106,7 +106,7 @@ const StatisticsContactFooter = () => {
                             </a>
                         </div>
                     </div>
-                    <p className="footer_copy">&#169; Shubhangi Sisodia | All rights reserved | 2024</p>
+                    <p className="footer_copy">&#169; Madhur Singh Sirohi | All rights reserved | 2024</p>
                 </div>
             </footer>
         </main>

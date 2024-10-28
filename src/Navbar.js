@@ -4,7 +4,7 @@ const Header = () => {
     return (
         <header className="header" id="header">
             <nav className="nav container">
-                <a href="#" className="nav_logo"><span>S</span>HUBHANGI</a>
+                <a href="#" className="nav_logo"><span>M</span>adhur</a>
                 <div className="nav_menu" id="nav-menu">
                     <ul className="nav_list grid">
                         {["Home", "About", "Skills", "Projects", "Statistics", "Contact Me"].map((item, index) => (

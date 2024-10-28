@@ -1,62 +1,109 @@
-import React from 'react';
+import React, { useState } from 'react';
+
 
 const Qualifications = () => {
-    return (
-        <section className="qualification">
-            <div className="qualification_container container">
-                <div className="qualification_tabs">
-                    <div className="qualification_button button-flex qualification_active" data-target='#work'>
-                        <i className="uil uil-graduation-cap qualification_icon"></i>&nbsp;Work
-                    </div>
-                    <div className="qualification_button button-flex" data-target='#education'>
-                        <i className="uil uil-briefcase-alt qualification_icon"></i>&nbsp;Education
-                    </div>
-                </div>
+  const [activeTab, setActiveTab] = useState('work');
 
-                <div className="qualification_sections">
-                    {/* Work Qualifications */}
-                    <div className="qualification_content qualification_active" data-content id="work">
-                        {[
-                            { title: "Lead Frontend Developer", subtitle: "Grouple (Mumbai)", date: "June 2023 - Present" },
-                            { title: "Frontend Developer", subtitle: "ZOTH.io (Bangalore)", date: "Jan 2023 - June 2023" },
-                            { title: "Frontend Developer Intern", subtitle: "BB Bunkerbound (Faridabad)", date: "June 2022 - Dec 2022" }
-                        ].map((work, index) => (
-                            <div className="qualification_data" key={index}>
-                                <div>
-                                    <h3 className="qualification_title">{work.title}</h3>
-                                    <span className="qualification_subtitle">{work.subtitle}</span>
-                                    <div className="qualification_calendar">
-                                        <i className="uil uil-calendar-alt"></i>
-                                        <span className="qualification_date">{work.date}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+  return (
+    <div className="qualification">
+      <div className="qualification_container container">
+        <div className="qualification_tabs">
+          <div
+            className={`qualification_button button-flex ${
+              activeTab === 'work' ? 'qualification_active' : ''
+            }`}
+            onClick={() => setActiveTab('work')}
+          >
+            <i className="uil uil-graduation-cap qualification_icon"></i>&nbsp;Work
+          </div>
+          <div
+            className={`qualification_button button-flex ${
+              activeTab === 'education' ? 'qualification_active' : ''
+            }`}
+            onClick={() => setActiveTab('education')}
+          >
+            <i className="uil uil-briefcase-alt qualification_icon"></i>&nbsp;Education
+          </div>
+        </div>
 
-                    {/* Education Qualifications */}
-                    <div className="qualification_content" data-content id="education">
-                        {[
-                            { title: "Bachelor of Technology in Computer Science", subtitle: "GGSIPU University (Delhi)", date: "2020 - 2024" },
-                            { title: "Intermediate", subtitle: "S.B.M.H.S School (Jaipur)", date: "2018 - 2020" },
-                            { title: "High School", subtitle: "S.B.M.H.S School (Jaipur)", date: "2016 - 2018" }
-                        ].map((edu, index) => (
-                            <div className="qualification_data" key={index}>
-                                <div>
-                                    <h3 className="qualification_title">{edu.title}</h3>
-                                    <span className="qualification_subtitle">{edu.subtitle}</span>
-                                    <div className="qualification_calendar">
-                                        <i className="uil uil-calendar-alt"></i>
-                                        <span className="qualification_date">{edu.date}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+        <div className="qualification_sections">
+          {activeTab === 'work' && (
+            <div className="qualification_content qualification_active" id="work">
+              {/* Qualification 1 */}
+              <div className="qualification_data">
+                <div>
+                  <h3 className="qualification_title">Full Stack Developer Intern</h3>
+                  <span className="qualification_subtitle">JAR (Bangalore)</span>
+                  <div className="qualification_calender">
+                    <i className="uil uil-calendar-alt"></i>
+                    July 2024 - Oct 2024
+                  </div>
                 </div>
+                <div>
+                  <span className="qualification_rounder"></span>
+                  <span className="qualification_line"></span>
+                </div>
+              </div>
+
+              {/* Qualification 2 */}
+              <div className="qualification_data">
+                <div></div>
+                <div>
+                  <span className="qualification_rounder"></span>
+                  <span className="qualification_line"></span>
+                </div>
+                <div>
+                  <h3 className="qualification_title">Frontend Developer Intern</h3>
+                  <span className="qualification_subtitle">SDS Software (Noida)</span>
+                  <div className="qualification_calender">
+                    <i className="uil uil-calendar-alt"></i>
+                    Jan 2024 - Mar 2024
+                  </div>
+                </div>
+              </div>
             </div>
-        </section>
-    );
+          )}
+
+          {activeTab === 'education' && (
+            <div className="qualification_content qualification_active" id="education">
+              {/* Experience 1 */}
+              <div className="qualification_data">
+                <div>
+                  <h3 className="qualification_title">0-100 FullStack Development </h3>
+                  <span className="qualification_subtitle">100xDev</span>
+                  <div className="qualification_calender">
+                    <i className="uil uil-calendar-alt"></i>
+                    jan 2024 - Aug 2024
+                  </div>
+                </div>
+                <div>
+                  <span className="qualification_rounder"></span>
+                  <span className="qualification_line"></span>
+                </div>
+              </div>
+
+              {/* Experience 2 */}
+              <div className="qualification_data">
+                <div></div>
+                <div>
+                  <span className="qualification_rounder"></span>
+                  <span className="qualification_line"></span>
+                </div>
+                <div>
+                  <h3 className="qualification_title">Bachelor of Technology</h3>
+                  <span className="qualification_subtitle">GL Bajaj (Greater Noida)</span>
+                  <div className="qualification_calender">
+                    <i className="uil uil-calendar-alt"></i>
+                    july 2029 - June 2023
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Qualifications;

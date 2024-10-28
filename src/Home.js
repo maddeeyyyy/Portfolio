@@ -1,47 +1,50 @@
 import React, { useEffect, useState } from 'react';
 
 const Home = () => {
-    const [typedText, setTypedText] = useState('');
-    const subtitleText = "Web Developer | Designer | Tech Enthusiast"; // Your subtitle text
-    const typingSpeed = 100; // Speed of typing in milliseconds
-    const pauseDuration = 2000; // Pause duration before starting to erase
+    const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"];
+    const period = 20000; // Period between rotations
 
-    useEffect(() => {
-        let currentIndex = 0;
-        let timeout;
+    // TxtRotate component, handles the rotating text functionality
+    const TxtRotate = ({ toRotate, period }) => {
+        const [loopNum, setLoopNum] = useState(0);
+        const [isDeleting, setIsDeleting] = useState(false);
+        const [text, setText] = useState('');
+        const [delta, setDelta] = useState(300 - Math.random() * 100);
 
-        const type = () => {
-            if (currentIndex < subtitleText.length) {
-                setTypedText((prev) => prev + subtitleText[currentIndex]);
-                currentIndex++;
-                timeout = setTimeout(type, typingSpeed);
+        useEffect(() => {
+            let ticker = setInterval(() => {
+                tick();
+            }, delta);
+
+            return () => { clearInterval(ticker); };
+        }, [text]);
+
+        const tick = () => {
+            const i = loopNum % toRotate.length;
+            const fullText = toRotate[i];
+
+            if (isDeleting) {
+                setText(fullText.substring(0, text.length - 1));
             } else {
-                clearTimeout(timeout);
-                setTimeout(() => {
-                    erase();
-                }, pauseDuration);
+                setText(fullText.substring(0, text.length + 1));
+            }
+
+            if (!isDeleting && text === fullText) {
+                setIsDeleting(true);
+                setDelta(period); // Pause before starting to delete
+            } else if (isDeleting && text === '') {
+                setIsDeleting(false);
+                setLoopNum(loopNum + 1);
+                setDelta(500); // Pause before typing the next word
+            } else {
+                setDelta(isDeleting ? 1000 : 2000);
             }
         };
 
-        const erase = () => {
-            if (currentIndex > 0) {
-                setTypedText((prev) => prev.slice(0, -1));
-                currentIndex--;
-                timeout = setTimeout(erase, typingSpeed);
-            } else {
-                clearTimeout(timeout);
-                setTimeout(() => {
-                    currentIndex = 0;
-                    type(); // Restart typing
-                }, pauseDuration);
-            }
-        };
-
-        type(); // Start typing
-
-        // Cleanup function to clear the timeout if the component unmounts
-        return () => clearTimeout(timeout);
-    }, []);
+        return (
+            <span className="txt-rotate">{text}</span>
+        );
+    };
 
     return (
         <section className="home section" id="home">
@@ -53,7 +56,7 @@ const Home = () => {
                             { href: "https://github.com/ShubhangiSisodia", icon: "uil-github-alt", id: "contact-github" },
                             { href: "https://twitter.com/_Shubhangiii_", icon: "uil-twitter-alt" }
                         ].map((social, index) => (
-                            <a href={social.href} target="_blank" className="home_social-icon" id={social.id} key={index}>
+                            <a href={social.href} target="_blank" rel="noopener noreferrer" className="home_social-icon" id={social.id} key={index}>
                                 <i className={`uil ${social.icon}`}></i>
                             </a>
                         ))}
@@ -70,8 +73,10 @@ const Home = () => {
                         </svg>
                     </div>
                     <div className="home_data">
-                        <h1 className="home_title" id="user-detail-name">Hi👋, I'm<br />MAdhur Singh Sirohi</h1>
-                        <h3 className="home_subtitle">{typedText}</h3> {/* Display the typed text */}
+                        <h1 className="home_title" id="user-detail-name">Hi👋, I'm<br />Madhur Singh Sirohi</h1>
+                        <h3 className="home_subtitle">
+                            <TxtRotate toRotate={toRotate} period={period} /> {/* Display the rotating text */}
+                        </h3>
                         <p className="home_description">I specialize in crafting stunning, functional websites that captivate users...</p>
                         <a href="#contact" className="button button-flex">Connect with Me <i className="uil uil-message button_icon"></i></a>
                     </div>
