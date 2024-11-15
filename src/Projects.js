@@ -5,35 +5,17 @@ import 'slick-carousel/slick/slick-theme.css'; // Import slick theme styles
 
 const projects = [
     {
-        title: "Grouple",
-        description: "An all-in-one booking platform developed to make group bookings easier and increase revenue. Created from scratch, it helps in selling comprehensive package deals and managing group reservations efficiently, with better deals for larger groups.",
-        image: "/images/grouple.png",
-        deployedLink: "https://www.grouple.in/"
+        title: "Payment-App",
+        description: "The payment app's frontend features a clean user interface.",
+        image: "./PaymentApp.webp",
+        deployedLink: "https://cash-app-frontend-dxhm6pp2d-madhurs-projects-66621e9b.vercel.app/"
     },
     {
-        title: "Barbaar",
-        description: "Created an interface, allowing customers based out of Dubai to select packages, dates, times, and food choices to book their reservations conveniently.",
-        image: "/images/barbar.png",
-        deployedLink: "https://spotty-butter-9254.netlify.app/"
-    },
-    {
-        title: "Merchant dashboard",
-        description: "Dashboard for the restaurant to manage bookings—accept, decline, and modify—simplifying day-to-day operations. Solving the problem of assigning a personal concierge to each booking.",
-        image: "/images/merchant.png",
-        deployedLink: "https://beta-merchant.testgrouple.com/Dashboard"
-    },
-    {
-        title: "Exemplar Space",
-        description: "Designed & developed a pixel-perfect website for an architecture firm, to boost marketing efforts and drive increased foot traffic.",
-        image: "/images/exemplar.png",
-        deployedLink: "https://exemplar.space/"
-    },
-    {
-        title: "Prepaid Friends",
-        description: "Developed a platform enabling users to convert Bitcoin into prepaid cards for seamless online purchases, in-store transactions, or global ATM cash withdrawals.",
-        image: "/images/prepaid2.png",
-        deployedLink: "https://prepaidfriends.netlify.app/"
-    },
+        title: "Shoe-App",
+        description: "Developed a fully-functional frontend for a comprehensive shoe app using modern web technologies",
+        image: "/shoeapp.png",
+        deployedLink: "https://shoe-rd85wnhs7-madhurs-projects-66621e9b.vercel.app/"
+    }
 ];
 
 const Project = () => {

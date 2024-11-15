@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const Home = () => {
-    const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"];
+    const toRotate = ["Web Developer"];
     const period = 20000; // Period between rotations
 
     // TxtRotate component, handles the rotating text functionality
@@ -17,7 +17,7 @@ const Home = () => {
             }, delta);
 
             return () => { clearInterval(ticker); };
-        }, [text]);
+        }, [text, delta]);
 
         const tick = () => {
             const i = loopNum % toRotate.length;
@@ -37,7 +37,7 @@ const Home = () => {
                 setLoopNum(loopNum + 1);
                 setDelta(500); // Pause before typing the next word
             } else {
-                setDelta(isDeleting ? 1000 : 2000);
+                setDelta(isDeleting ? 100 : 200);
             }
         };
 
@@ -52,9 +52,8 @@ const Home = () => {
                 <div className="home_content grid">
                     <div className="home_social">
                         {[
-                            { href: "https://www.linkedin.com/in/shubhangi-sisodia/", icon: "uil-linkedin-alt", id: "contact-linkedin" },
-                            { href: "https://github.com/ShubhangiSisodia", icon: "uil-github-alt", id: "contact-github" },
-                            { href: "https://twitter.com/_Shubhangiii_", icon: "uil-twitter-alt" }
+                            { href: "https://www.linkedin.com/in/madhur-sirohi-58274a2b1/", icon: "uil-linkedin-alt", id: "contact-linkedin" },
+                            { href: "https://github.com/maddeeyyyy", icon: "uil-github-alt", id: "contact-github" },
                         ].map((social, index) => (
                             <a href={social.href} target="_blank" rel="noopener noreferrer" className="home_social-icon" id={social.id} key={index}>
                                 <i className={`uil ${social.icon}`}></i>
@@ -68,7 +67,7 @@ const Home = () => {
                             </mask>
                             <g mask="url(#mask0)">
                                 <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
-                                <image x="1" className="home_blob-img" href="/images/myimg.png" />
+                                <image x="1" className="home_blob-img" href="/profile.jpeg" />
                             </g>
                         </svg>
                     </div>
