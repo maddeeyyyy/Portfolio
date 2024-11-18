@@ -23,7 +23,7 @@ const StatisticsContactFooter = () => {
                     />
                     <img
                         src="https://github-readme-streak-stats.herokuapp.com/?user=maddeeyyyy&"
-                        alt="shubhangisisodia"
+                        alt="madhur"
                         id="github-streak-stats"
                     />
                 </div>
@@ -95,14 +95,11 @@ const StatisticsContactFooter = () => {
                             <span className="footer_subtitle">FullStack Developer</span>
                         </div>
                         <div className="footer_socials">
-                            <a href="https://www.linkedin.com/in/shubhangi-sisodia/" target="_blank" rel="noopener noreferrer" className="footer_social">
+                            <a href="https://www.linkedin.com/in/madhur-sirohi-58274a2b1/" target="_blank" rel="noopener noreferrer" className="footer_social">
                                 <i className="uil uil-linkedin-alt"></i>
                             </a>
-                            <a href="https://github.com/ShubhangiSisodia" target="_blank" rel="noopener noreferrer" className="footer_social">
+                            <a href="https://github.com/maddeeyyyy" target="_blank" rel="noopener noreferrer" className="footer_social">
                                 <i className="uil uil-github-alt"></i>
-                            </a>
-                            <a href="https://twitter.com/shubhangi_99" target="_blank" rel="noopener noreferrer" className="footer_social">
-                                <i className="uil uil-twitter-alt"></i>
                             </a>
                         </div>
                     </div>
